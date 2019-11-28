@@ -1,0 +1,42 @@
+{
+  "name": "bujo",
+  "version": "1.0.0",
+  "description": "An online version of the bullet journal method",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "client": "npm start --prefix client",
+    "server": "nodemon server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm install --only=dev --prefix client && npm install --prefix client && npm run build --prefix client",
+    "install-all": "npm install; npm install --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/semyers189/bujo.git"
+  },
+  "keywords": [
+    "bullet",
+    "journal"
+  ],
+  "author": "Shannon Myers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/semyers189/bujo/issues"
+  },
+  "homepage": "https://github.com/semyers189/bujo#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.1.0",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.14"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "nodemon": "^2.0.1"
+  }
+}
