@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
@@ -9,12 +9,13 @@ import Four04 from './pages/Four04';
 function App() {
   return (
     <Router>
-      <div className='App'>Bujo App</div>
-      <Switch>
-        <Route exact path='/' component={Main} />
-        <Route exact path='/about' component={About} />
-        <Route component={Four04} />
-      </Switch>
+      <Fragment className='App'>
+        <Switch>
+          <Route exact path='/' component={Main} />
+          <Route exact path='/about' component={About} />
+          <Route component={Four04} />
+        </Switch>
+      </Fragment>
     </Router>
   );
 }

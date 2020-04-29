@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Layout from '../components/Layout';
+
 const Four04 = () => {
   return (
-    <div>
-      <h1>Four04</h1>
-      <Link to='/'>Go back to safety</Link>
-    </div>
+    <Layout>
+      <main>
+        <h1>Four04</h1>
+        <Link to='/'>Go back to safety</Link>
+      </main>
+    </Layout>
   );
 };
 
