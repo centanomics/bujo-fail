@@ -1,0 +1,29 @@
+/*
+  LAYOUT -------------------------------
+*/
+:root {
+  --eggshell: #f4f1de;
+  --terraCotta: #e07a5f;
+  --independence: #3d405b;
+  --greenSheen: #81b29a;
+  --gold: #f2cc8f;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+/*
+  HEADER -------------------------------
+*/
+
+/*
+  FOOTER -------------------------------
+*/
+
+/*
+  MAIN -------------------------------
+*/

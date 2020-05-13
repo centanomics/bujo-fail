@@ -9,7 +9,7 @@ import Four04 from './pages/Four04';
 function App() {
   return (
     <Router>
-      <Fragment className='App'>
+      <Fragment>
         <Switch>
           <Route exact path='/' component={Main} />
           <Route exact path='/about' component={About} />
