@@ -6,6 +6,8 @@ import {
   DELETE_BULLET,
   SET_CURRENT,
   BULLETS_ERROR,
+  SET_UPDATE,
+  CLEAR_CURRENT,
 } from '../actions/types';
 
 const initialState = {
@@ -13,6 +15,7 @@ const initialState = {
   current: null,
   loading: false,
   error: null,
+  update: false,
 };
 
 export default (state = initialState, action) => {
@@ -34,6 +37,8 @@ export default (state = initialState, action) => {
         bullets: state.bullets.map((bullet) =>
           bullet.id === action.payload.id ? action.payload : bullet
         ),
+        update: false,
+        current: null,
       };
     case DELETE_BULLET:
       return {
@@ -45,10 +50,22 @@ export default (state = initialState, action) => {
         ...state,
         current: action.payload,
       };
+    case CLEAR_CURRENT:
+      return {
+        ...state,
+        current: null,
+        update: false,
+      };
     case SET_BULLET_LOADING:
       return {
         ...state,
         loading: true,
+      };
+    case SET_UPDATE:
+      return {
+        ...state,
+        update: true,
+        current: action.payload,
       };
     case BULLETS_ERROR:
       console.error(action.payload);

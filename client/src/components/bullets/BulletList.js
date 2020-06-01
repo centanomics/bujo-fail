@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import BulletAddForm from './BulletAddForm';
+import BulletEditForm from './BulletEditForm';
 import Bullet from './Bullet';
 import PreLoader from '../layout/PreLoader';
 
 import { getBullets } from '../../actions/bulletActions';
 
-const BulletList = ({ bullet: { bullets, loading }, getBullets }) => {
+const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
   useEffect(() => {
     getBullets();
     //eslint-disable-next-line
@@ -20,7 +21,7 @@ const BulletList = ({ bullet: { bullets, loading }, getBullets }) => {
 
   return (
     <div>
-      <BulletAddForm />
+      {!update ? <BulletAddForm /> : <BulletEditForm />}
       <ul>
         {bullets.map((bullet) => (
           <Bullet bulletInfo={bullet} key={bullet.id} />

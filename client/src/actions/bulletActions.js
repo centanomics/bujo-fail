@@ -5,7 +5,9 @@ import {
   UPDATE_BULLET,
   DELETE_BULLET,
   SET_CURRENT,
+  CLEAR_CURRENT,
   BULLETS_ERROR,
+  SET_UPDATE,
 } from './types';
 
 import API from '../utils/API';
@@ -101,4 +103,21 @@ export const setCurrentBullet = (bullet) => async (dispatch) => {
       payload: err.toString(),
     });
   }
+};
+
+// setup edit form
+
+export const editBullet = (bullet) => (dispatch) => {
+  dispatch({
+    type: SET_UPDATE,
+    payload: bullet,
+  });
+};
+
+// cancel update
+
+export const cancelUpdate = () => (dispatch) => {
+  dispatch({
+    type: CLEAR_CURRENT,
+  });
 };

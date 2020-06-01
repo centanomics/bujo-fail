@@ -25,6 +25,11 @@ const BulletAddForm = ({ addBullet }) => {
     bullet.date = Date.now().toString();
     bullet.id = uuidv4();
     addBullet(bullet);
+    setBullet({
+      name: '',
+      type: 'task',
+      priority: false,
+    });
   };
 
   return (

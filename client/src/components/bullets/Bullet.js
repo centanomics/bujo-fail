@@ -2,19 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { deleteBullet } from '../../actions/bulletActions';
+import { deleteBullet, editBullet } from '../../actions/bulletActions';
 
-const Bullet = ({
-  bulletInfo: { id, name, type, date, priority },
-  deleteBullet,
-}) => {
+const Bullet = ({ bulletInfo, deleteBullet, editBullet }) => {
+  const { id, name } = bulletInfo;
   const onClick = () => {
     deleteBullet(id);
+  };
+  const onEdit = () => {
+    editBullet(bulletInfo);
   };
   return (
     <li>
       <h1>{name}</h1>
       <button onClick={onClick}>Delete</button>
+      <button onClick={onEdit}>Update</button>
     </li>
   );
 };
@@ -30,4 +32,4 @@ Bullet.propTypes = {
   deleteBullet: PropTypes.func.isRequired,
 };
 
-export default connect(null, { deleteBullet })(Bullet);
+export default connect(null, { deleteBullet, editBullet })(Bullet);
