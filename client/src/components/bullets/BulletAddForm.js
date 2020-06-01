@@ -24,7 +24,6 @@ const BulletAddForm = ({ addBullet }) => {
     e.preventDefault();
     bullet.date = Date.now().toString();
     bullet.id = uuidv4();
-    console.log(bullet);
     addBullet(bullet);
   };
 

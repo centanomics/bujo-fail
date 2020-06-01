@@ -26,21 +26,19 @@ export default (state = initialState, action) => {
     case ADD_BULLET:
       return {
         ...state,
-        bullets: [...state.logs, action.payload],
+        bullets: [...state.bullets, action.payload],
       };
     case UPDATE_BULLET:
       return {
         ...state,
         bullets: state.bullets.map((bullet) =>
-          bullet._id === action.payload._id ? action.payload : bullet
+          bullet.id === action.payload.id ? action.payload : bullet
         ),
       };
     case DELETE_BULLET:
       return {
         ...state,
-        bullets: state.bullets.filter(
-          (bullet) => bullet._id !== action.payload
-        ),
+        bullets: state.bullets.filter((bullet) => bullet.id !== action.payload),
       };
     case SET_CURRENT:
       return {
@@ -53,6 +51,7 @@ export default (state = initialState, action) => {
         loading: true,
       };
     case BULLETS_ERROR:
+      console.error(action.payload);
       return {
         ...state,
         error: action.payload,
