@@ -1,55 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import BulletAddForm from './BulletAddForm';
 import Bullet from './Bullet';
+import PreLoader from '../layout/PreLoader';
 
-const BulletList = () => {
-  // const bullets = [
-  //   {
-  //     _id: '2fe0f156-1cef-420f-b210-46bbdb2f4a88',
-  //     userId: 'a52af12a-426e-4295-bad3-cb00313f8b31',
-  //     name: 'Do Laundry',
-  //     type: 'Task',
-  //     date: '2019-04-28',
-  //     priority: false,
-  //   },
-  //   {
-  //     _id: 'ca251245-3c6f-4144-8b49-ddd3e3e59bc0',
-  //     userId: 'a52af12a-426e-4295-bad3-cb00313f8b31',
-  //     name: 'Final Exam for Bio',
-  //     type: 'Event',
-  //     date: '2019-04-27',
-  //     priority: true,
-  //   },
-  //   {
-  //     _id: 'c4084371-f3b6-4a6f-ad6f-5ee4d009e367',
-  //     userId: 'a52af12a-426e-4295-bad3-cb00313f8b31',
-  //     name: 'idk what to put here',
-  //     type: 'Note',
-  //     date: '2019-04-28',
-  //     priority: false,
-  //   },
-  //   {
-  //     _id: '99922729-d0b8-4ffa-bc0f-8f4b57ac968b',
-  //     userId: 'f3478aa7-d627-454b-9ccb-8a41f0a1d0e5',
-  //     name: 'Do Laundry',
-  //     type: 'Task',
-  //     date: '2019-04-28',
-  //     priority: false,
-  //   },
-  // ];
-  const bullets = [];
+import { getBullets } from '../../actions/bulletActions';
+
+const BulletList = ({ bullet: { bullets, loading }, getBullets }) => {
+  useEffect(() => {
+    getBullets();
+    //eslint-disable-next-line
+  }, []);
+
+  if (loading || bullets === null) {
+    return <PreLoader />;
+  }
 
   return (
     <div>
       <BulletAddForm />
       <ul>
         {bullets.map((bullet) => (
-          <Bullet bulletInfo={bullet} />
+          <Bullet bulletInfo={bullet} key={bullet.id} />
         ))}
       </ul>
     </div>
   );
 };
 
-export default BulletList;
+BulletList.propTypes = {
+  bullet: PropTypes.shape({
+    bullets: PropTypes.array,
+    loading: PropTypes.bool.isRequired,
+  }),
+  getBullets: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  bullet: state.bullet,
+});
+
+export default connect(mapStateToProps, { getBullets })(BulletList);

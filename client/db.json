@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "_id": "f3478aa7-d627-454b-9ccb-8a41f0a1d0e5",
+      "id": "f3478aa7-d627-454b-9ccb-8a41f0a1d0e5",
       "hasAccount": false,
       "email": "",
       "password": "",
@@ -9,7 +9,7 @@
       "reset_expires": ""
     },
     {
-      "_id": "a52af12a-426e-4295-bad3-cb00313f8b31",
+      "id": "a52af12a-426e-4295-bad3-cb00313f8b31",
       "hasAccount": true,
       "email": "myemail@gmail.com",
       "password": "pretend this is hashed",
@@ -19,36 +19,43 @@
   ],
   "bullets": [
     {
-      "_id": "2fe0f156-1cef-420f-b210-46bbdb2f4a88",
+      "id": "2fe0f156-1cef-420f-b210-46bbdb2f4a88",
       "userId": "a52af12a-426e-4295-bad3-cb00313f8b31",
       "name": "Do Laundry",
-      "type": "Task",
+      "type": "task",
       "date": "2019-04-28",
       "priority": false
     },
     {
-      "_id": "ca251245-3c6f-4144-8b49-ddd3e3e59bc0",
+      "id": "ca251245-3c6f-4144-8b49-ddd3e3e59bc0",
       "userId": "a52af12a-426e-4295-bad3-cb00313f8b31",
       "name": "Final Exam for Bio",
-      "type": "Event",
+      "type": "event",
       "date": "2019-04-27",
       "priority": true
     },
     {
-      "_id": "c4084371-f3b6-4a6f-ad6f-5ee4d009e367",
+      "id": "c4084371-f3b6-4a6f-ad6f-5ee4d009e367",
       "userId": "a52af12a-426e-4295-bad3-cb00313f8b31",
       "name": "idk what to put here",
-      "type": "Note",
+      "type": "note",
       "date": "2019-04-28",
       "priority": false
     },
     {
-      "_id": "99922729-d0b8-4ffa-bc0f-8f4b57ac968b",
+      "id": "99922729-d0b8-4ffa-bc0f-8f4b57ac968b",
       "userId": "f3478aa7-d627-454b-9ccb-8a41f0a1d0e5",
       "name": "Do Laundry",
-      "type": "Task",
+      "type": "task",
       "date": "2019-04-28",
       "priority": false
+    },
+    {
+      "name": "Exist",
+      "type": "task",
+      "priority": false,
+      "date": "1590971863329",
+      "id": "36095900-9f76-435d-a1e7-53971775d0b3"
     }
   ]
 }
