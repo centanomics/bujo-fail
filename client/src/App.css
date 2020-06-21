@@ -9,6 +9,11 @@
   --gold: #f2cc8f;
 }
 
+html {
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -27,6 +32,13 @@ header {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--independence);
+  text-decoration: none;
+  font-size: 24px;
 }
 
 header ul {
@@ -36,7 +48,18 @@ header ul {
 
 header li {
   display: inline-block;
-  margin: 10px;
+  margin: 20px 0 20px 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+header li a {
+  text-decoration: none;
+  color: black;
+}
+
+header li a:hover {
+  color: green;
 }
 
 /*
@@ -46,3 +69,21 @@ header li {
 /*
   MAIN -------------------------------
 */
+
+/* Form */
+
+/*
+  BULLETS -------------------------------
+*/
+
+.bullet-task {
+  list-style-type: disc;
+}
+
+.bullet-event {
+  list-style-type: circle;
+}
+
+.bullet-note {
+  list-style-type: '-';
+}

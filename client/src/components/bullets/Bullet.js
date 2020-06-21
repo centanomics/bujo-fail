@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { deleteBullet, editBullet } from '../../actions/bulletActions';
 
 const Bullet = ({ bulletInfo, deleteBullet, editBullet }) => {
-  const { id, name } = bulletInfo;
+  const { id, name, type } = bulletInfo;
   const onClick = () => {
     deleteBullet(id);
   };
@@ -13,7 +13,7 @@ const Bullet = ({ bulletInfo, deleteBullet, editBullet }) => {
     editBullet(bulletInfo);
   };
   return (
-    <li>
+    <li className={`bullet-${type}`}>
       <h1>{name}</h1>
       <button onClick={onClick}>Delete</button>
       <button onClick={onEdit}>Update</button>

@@ -1,15 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
+  const links = ['about', 'login', 'signup'];
+
   return (
     <nav>
       <ul>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
-        <li>Sign up</li>
-        <li>Login</li>
+        {links.map((link) => (
+          <li>
+            <NavLink
+              to={`/${link}`}
+              className={link}
+              activeClassName={`${link}-active`}
+            >
+              {link.charAt(0).toUpperCase() + link.slice(1)}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
