@@ -8,11 +8,11 @@ const Nav = () => {
     <nav>
       <ul>
         {links.map((link) => (
-          <li>
+          <li key={link}>
             <NavLink
               to={`/${link}`}
-              className={link}
-              activeClassName={`${link}-active`}
+              className={`${link} navlink`}
+              activeClassName={`${link}-active active`}
             >
               {link.charAt(0).toUpperCase() + link.slice(1)}
             </NavLink>

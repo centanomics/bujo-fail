@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <Layout>
       <main>
-        <h1>Main</h1>
+        <h1>Enter A Task Below</h1>
         <BulletList />
       </main>
     </Layout>

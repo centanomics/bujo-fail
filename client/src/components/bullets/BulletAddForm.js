@@ -33,7 +33,7 @@ const BulletAddForm = ({ addBullet }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className='bulletForm'>
       <select value={type} onChange={onChange} name='type'>
         <option value='task'> Task</option>
         <option value='event'> Event</option>
@@ -46,7 +46,9 @@ const BulletAddForm = ({ addBullet }) => {
         onChange={onChange}
         name='priority'
       />
-      <button type='submit'>Add Bullet</button>
+      <button type='submit' disabled={name === ''}>
+        Add Bullet
+      </button>
     </form>
   );
 };

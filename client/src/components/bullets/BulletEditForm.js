@@ -29,7 +29,7 @@ const BulletEditForm = ({
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className='bulletForm'>
       <select value={type} onChange={onChange} name='type'>
         <option value='task'>Task</option>
         <option value='event'>Event</option>
