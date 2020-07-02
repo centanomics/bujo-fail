@@ -12,7 +12,6 @@
 html {
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
-  background-color: var(--eggshell);
 }
 
 .layout {
@@ -59,6 +58,7 @@ header li a {
   text-decoration: none;
   color: var(--independence);
   padding: 10px;
+  display: inline-block;
 }
 
 header li a:not(.signup):hover,
@@ -70,13 +70,13 @@ header li a:not(.signup):hover,
   background-color: var(--independence);
   border: 3px solid var(--independence);
   border-radius: 5px;
-  padding: 10px 25px;
   color: white;
+  padding: 10px 25px;
+  transition: all 200ms ease;
 }
 
 .signup:hover {
-  background-color: var(--eggshell);
-  color: var(--independence);
+  transform: scale(1.1);
 }
 
 /*
@@ -135,7 +135,16 @@ main h1 {
 */
 
 .bullet {
+  align-items: baseline;
   background-color: whitesmoke;
+  list-style-position: inside;
+  margin: 16px;
+  padding: 10px;
+}
+
+.bullet div {
+  align-items: baseline;
+  display: flex;
 }
 
 .bullet-task {

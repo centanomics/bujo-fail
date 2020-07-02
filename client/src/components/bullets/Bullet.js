@@ -14,9 +14,11 @@ const Bullet = ({ bulletInfo, deleteBullet, editBullet }) => {
   };
   return (
     <li className={`bullet-${type} bullet`}>
-      <h2>{name}</h2>
-      <button onClick={onClick}>Delete</button>
-      <button onClick={onEdit}>Update</button>
+      <div>
+        <h2>{name}</h2>
+        <button onClick={onClick}>Delete</button>
+        <button onClick={onEdit}>Update</button>
+      </div>
     </li>
   );
 };
