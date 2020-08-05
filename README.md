@@ -1,6 +1,6 @@
-# Project Title
+# Online Bujo
 
-One Paragraph of project description goes here
+When it comes to Bullet Journaling (or Bujo), it's not uncommon to solely use one notebook for everything, including, but not limited to, running lists, habit trackers, daily reflections, etc. While this system can work fine there can be a problem with referencing things that aren't in the journal. Even within the journal referencing other items can become quite the hassle. What this concept plans to solve is to add that interconnectivity that is lacking in a phyisical notebook between the list items and links to websites that doesn't fit directly into a notebook. This would allow users to follow the standard system with bullet journaling with the added value of being able to quickly access the links or list items that your referencing.
 
 ## Getting Started
 
