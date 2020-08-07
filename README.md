@@ -10,27 +10,71 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
+#### Without Backend
+
+1. **Node.js**
+
+- Install from [their website](https://nodejs.org/en/)
+- Check that your node version is higher than 12.5.0
+
 ```
-Give examples
+node -v
 ```
+
+- Check that your npm version is higher than 6.13.7
+
+```
+npm -v
+```
+
+- You're all set!
+
+#### With Backend
+
+- Coming Soon.
+
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+Go to the root folder of the project in the terminal.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Install the depencies needed in this folder.
 
 ```
-until finished
+npm install
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Path to the client folder
+
+```
+cd client
+```
+
+Install the depencies needed in the client folder.
+
+```
+npm install
+```
+
+Path back to the root folder.
+
+```
+cd ..
+```
+
+If you **want** the backend to run start the server with the dev script.
+
+```
+npm run dev
+```
+
+If you **don't want** the backend to run, start the server with the dev-frontend script.
+
+```
+npm run dev-frontend
+```
+
+The project should be running now!
 
 ## Running the tests
 
@@ -72,7 +116,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
+- **Centanomics** - _Initial work_ - [Centanomics](https://github.com/centanomics)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -82,6 +126,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
+- Ryder Carroll - creator of the Bullet Journal Method
 - Inspiration
 - etc
