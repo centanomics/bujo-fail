@@ -33,7 +33,6 @@ npm -v
 
 - Coming Soon.
 
-
 ### Installing
 
 Go to the root folder of the project in the terminal.
@@ -102,9 +101,10 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-- [Maven](https://maven.apache.org/) - Dependency Management
-- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+- [React](https://reactjs.org/) - JS Library for user interfaces
+- [NPM](https://www.npmjs.com/) - Dependency Management
+- [Express](https://expressjs.com/) and [Node.js](https://nodejs.org/) - Used to build api
+- [MongoDB](https://www.mongodb.com/) - Database used
 
 ## Contributing
 
@@ -126,6 +126,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- Ryder Carroll - creator of the Bullet Journal Method
-- Inspiration
-- etc
+- [Ryder Carroll](https://bulletjournal.com/) - creator of the Bullet Journal Method
