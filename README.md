@@ -101,10 +101,16 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
+<<<<<<< HEAD
 - [React](https://reactjs.org/) - JS Library for user interfaces
 - [NPM](https://www.npmjs.com/) - Dependency Management
 - [Express](https://expressjs.com/) and [Node.js](https://nodejs.org/) - Used to build api
 - [MongoDB](https://www.mongodb.com/) - Database used
+=======
+- [React](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+- [Node.js](https://maven.apache.org/) - Dependency Management
+- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+>>>>>>> f598ce92b079d1a21d14edc503c95c7c9681d7f0
 
 ## Contributing
 
