@@ -135,16 +135,16 @@ main h1 {
 */
 
 .bullet {
-  align-items: baseline;
   background-color: whitesmoke;
   list-style-position: inside;
   margin: 16px;
   padding: 10px;
 }
 
-.bullet div {
+.bullet > div {
   align-items: baseline;
   display: flex;
+  justify-content: space-between;
 }
 
 .bullet-task {
