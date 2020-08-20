@@ -7,6 +7,8 @@ import store from './store';
 
 import Main from './pages/Main';
 import About from './pages/About';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import Four04 from './pages/Four04';
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Switch>
             <Route exact path='/' component={Main} />
             <Route exact path='/about' component={About} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
             <Route component={Four04} />
           </Switch>
         </Fragment>
