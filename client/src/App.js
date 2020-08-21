@@ -20,7 +20,7 @@ function App() {
             <Route exact path='/' component={Main} />
             <Route exact path='/about' component={About} />
             <Route exact path='/login' component={Login} />
-            <Route exact path='/register' component={Register} />
+            <Route exact path='/signup' component={Register} />
             <Route component={Four04} />
           </Switch>
         </Fragment>
