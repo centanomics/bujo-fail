@@ -139,6 +139,7 @@ main h1 {
   list-style-position: inside;
   margin: 16px;
   padding: 10px;
+  list-style: none;
 }
 
 .bullet > div {
@@ -147,14 +148,14 @@ main h1 {
   justify-content: space-between;
 }
 
-.bullet-task {
-  list-style-type: disc;
+.bullet-task::before {
+  content: '·';
 }
 
-.bullet-event {
-  list-style-type: circle;
+.bullet-event::before {
+  content: '○';
 }
 
-.bullet-note {
-  list-style-type: '-';
+.bullet-note::before {
+  content: '-';
 }
