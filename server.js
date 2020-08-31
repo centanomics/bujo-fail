@@ -1,7 +1,8 @@
 const log = require('debug')('server:log');
 const express = require('express');
 const connectDB = require('./config/db');
-const path = require('path');
+
+const authRouter = require('./routes/authRouter');
 
 const app = express();
 
@@ -12,6 +13,7 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 //Define Routes
+app.use('/api/auth', authRouter);
 
 //Serve static assets in production
 if (process.env.NODE_ENV === 'production') {

@@ -136,7 +136,6 @@ main h1 {
 
 .bullet {
   background-color: whitesmoke;
-  list-style-position: inside;
   margin: 16px;
   padding: 10px;
   list-style: none;
