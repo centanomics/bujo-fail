@@ -35,7 +35,13 @@ const BulletEditForm = ({
         <option value='event'>Event</option>
         <option value='note'>Note</option>
       </select>
-      <input type='text' value={name} onChange={onChange} name='name' />
+      <input
+        type='text'
+        value={name}
+        onChange={onChange}
+        name='name'
+        autoFocus
+      />
       <input
         type='checkbox'
         checked={priority}

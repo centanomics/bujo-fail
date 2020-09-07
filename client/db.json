@@ -56,6 +56,13 @@
       "priority": false,
       "date": "1597968615853",
       "id": "6670a3f4-8c12-4759-9f61-5030ab609127"
+    },
+    {
+      "name": "Finish this project",
+      "type": "task",
+      "priority": false,
+      "date": "1599366767172",
+      "id": "6ee8b36a-be71-4546-9cb6-7c43bddfedd6"
     }
   ]
 }
