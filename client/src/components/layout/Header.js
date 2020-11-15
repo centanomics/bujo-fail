@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Nav from './Nav';
 
+// header component with nav and link to home page
 const Header = () => {
   return (
     <header>

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 
+// pages
 import Main from './pages/Main';
 import About from './pages/About';
 import Login from './pages/Login';
