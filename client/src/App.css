@@ -146,15 +146,3 @@ main h1 {
   display: flex;
   justify-content: space-between;
 }
-
-.bullet-task::before {
-  content: '·';
-}
-
-.bullet-event::before {
-  content: '○';
-}
-
-.bullet-note::before {
-  content: '-';
-}
