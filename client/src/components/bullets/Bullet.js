@@ -13,12 +13,15 @@ const Bullet = ({ bulletInfo, deleteBullet, editBullet }) => {
     editBullet(bulletInfo);
   };
   return (
-    <li className={`bullet-${type} bullet`}>
+    <li className="bullet">
       <div>
-        <h2>{name}</h2>
+        <div>
+          <span className="symbol">{type === 'task' ? '•' : type === 'event' ? '○' : '⁃'}</span>
+          <h2>{name}</h2>
+        </div>
         <div>
           <button onClick={onClick}>Delete</button>
-          <button onClick={onEdit}>Update</button>
+          <button onClick={onEdit}><i className="far fa-edit"></i></button>
         </div>
       </div>
     </li>

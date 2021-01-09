@@ -135,7 +135,7 @@ main h1 {
 */
 
 .bullet {
-  background-color: whitesmoke;
+  background-color: var(--eggshell);
   margin: 16px;
   padding: 10px;
   list-style: none;
@@ -145,4 +145,17 @@ main h1 {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
+}
+
+.bullet > div > div:first-child {
+  align-items: baseline;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.symbol {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 16px;
 }
