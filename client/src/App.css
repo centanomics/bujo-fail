@@ -87,6 +87,11 @@ header li a:not(.signup):hover,
   MAIN -------------------------------
 */
 
+main {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 main h1 {
   text-align: center;
 }
@@ -133,6 +138,11 @@ main h1 {
 /*
   BULLETS -------------------------------
 */
+
+.bullet-list {
+  max-height: 450px;
+  overflow-y: scroll;
+}
 
 .bullet {
   background-color: var(--eggshell);

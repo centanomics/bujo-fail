@@ -22,7 +22,7 @@ const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
   return (
     <div>
       {!update ? <BulletAddForm /> : <BulletEditForm />}
-      <ul>
+      <ul className="bullet-list">
         {bullets.map((bullet) => (
           <Bullet bulletInfo={bullet} key={bullet.id} />
         ))}
