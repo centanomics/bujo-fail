@@ -19,14 +19,6 @@
   ],
   "bullets": [
     {
-      "id": "2fe0f156-1cef-420f-b210-46bbdb2f4a88",
-      "userId": "a52af12a-426e-4295-bad3-cb00313f8b31",
-      "name": "Do Laundry",
-      "type": "task",
-      "date": "2019-04-28",
-      "priority": false
-    },
-    {
       "id": "ca251245-3c6f-4144-8b49-ddd3e3e59bc0",
       "userId": "a52af12a-426e-4295-bad3-cb00313f8b31",
       "name": "Final Exam for Bio",
@@ -49,6 +41,20 @@
       "type": "task",
       "date": "2019-04-28",
       "priority": false
+    },
+    {
+      "name": "speed",
+      "type": "note",
+      "priority": false,
+      "date": "1610203398542",
+      "id": "2e1105cc-13ae-4842-a6fe-684e2b47153b"
+    },
+    {
+      "name": "exam",
+      "type": "task",
+      "priority": true,
+      "date": "1610203698766",
+      "id": "a7502c98-6e96-44e5-9131-b09a5519abef"
     }
   ]
 }

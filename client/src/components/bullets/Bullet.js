@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FaEdit, FaTrashAlt} from 'react-icons/fa'
 
 import { deleteBullet, editBullet } from '../../actions/bulletActions';
 
 const Bullet = ({ bulletInfo, deleteBullet, editBullet }) => {
-  const { id, name, type } = bulletInfo;
+  const { id, name, type, priority } = bulletInfo;
   const onClick = () => {
     deleteBullet(id);
   };
@@ -16,12 +17,13 @@ const Bullet = ({ bulletInfo, deleteBullet, editBullet }) => {
     <li className="bullet">
       <div>
         <div>
+          <span className={`symbol ${!priority ? 'symbol-priority' : ''}`}>!</span>
           <span className="symbol">{type === 'task' ? '•' : type === 'event' ? '○' : '⁃'}</span>
           <h2>{name}</h2>
         </div>
         <div>
-          <button onClick={onClick}>Delete</button>
-          <button onClick={onEdit}><i className="far fa-edit"></i></button>
+          <button onClick={onClick}><FaTrashAlt /></button>
+          <button onClick={onEdit}><FaEdit /></button>
         </div>
       </div>
     </li>
