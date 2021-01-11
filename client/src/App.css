@@ -140,10 +140,10 @@ main h1 {
 */
 
 .bullet-list-date {
-  max-height: 450px;
   overflow-y: scroll;
   list-style: none;
   padding-left: 0;
+  max-height: 100%;
 }
 
 .bullet-list {
