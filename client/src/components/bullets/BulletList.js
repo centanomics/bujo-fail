@@ -38,11 +38,11 @@ const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
   return (
     <div>
       {!update ? <BulletAddForm /> : <BulletEditForm />}
-      <ul>
+      <ul className="bullet-list-date">
         {sortedBullets.map((sortedBullet, index) => (
-          <li key={sortedBullet.date}>
+          <li key={sortedBullet.date} className="bullet-date">
             <h3>{sortedBullet.date}</h3>
-            <ul>
+            <ul className="bullet-list">
               {sortedBullet.bullets.map((bullet) => (
                 <Bullet bulletInfo={bullet} key={bullet.id} />
               ))}

@@ -139,9 +139,20 @@ main h1 {
   BULLETS -------------------------------
 */
 
-.bullet-list {
+.bullet-list-date {
   max-height: 450px;
   overflow-y: scroll;
+  list-style: none;
+  padding-left: 0;
+}
+
+.bullet-list {
+  padding-left: 0;
+}
+
+.bullet-date h3 {
+  margin: 0 16px;
+  padding: 0 10px;
 }
 
 .bullet {
