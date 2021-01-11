@@ -57,11 +57,18 @@
       "id": "e32238c2-a61f-4832-bf94-05c8b8f725fb"
     },
     {
-      "name": "school",
+      "name": "today is sunday",
+      "type": "task",
+      "priority": false,
+      "date": "2021-01-11",
+      "id": "b821febf-e357-45c2-a199-43b0ca0b0874"
+    },
+    {
+      "name": "Trash",
       "type": "note",
       "priority": false,
-      "date": "2021-01-09",
-      "id": "5c513722-e145-40ff-8101-f0af27020c79"
+      "date": "2021-01-11",
+      "id": "3de3c72d-0066-4a65-b397-c35f91c37fc6"
     }
   ]
 }

@@ -8,8 +8,10 @@ import Bullet from './Bullet';
 import PreLoader from '../layout/PreLoader';
 
 import { getBullets } from '../../actions/bulletActions';
+import sortBullets from '../../utils/sortBullets'
 
 const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
+  
   useEffect(() => {
     getBullets();
     //eslint-disable-next-line
@@ -19,16 +21,37 @@ const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
     return <PreLoader />;
   }
 
+  const sortedBullets = sortBullets(bullets);
+
+  // return (
+  //   <div>
+  //     {console.log(bullets)}
+  //     {!update ? <BulletAddForm /> : <BulletEditForm />}
+  //     <ul className="bullet-list">
+  //       {bullets.map((bullet) => (
+  //         <Bullet bulletInfo={bullet} key={bullet.id} />
+  //       ))}
+  //     </ul>
+  //   </div>
+  // );
+
   return (
     <div>
       {!update ? <BulletAddForm /> : <BulletEditForm />}
-      <ul className="bullet-list">
-        {bullets.map((bullet) => (
-          <Bullet bulletInfo={bullet} key={bullet.id} />
+      <ul>
+        {sortedBullets.map((sortedBullet, index) => (
+          <li key={sortedBullet.date}>
+            <h3>{sortedBullet.date}</h3>
+            <ul>
+              {sortedBullet.bullets.map((bullet) => (
+                <Bullet bulletInfo={bullet} key={bullet.id} />
+              ))}
+            </ul>
+          </li>
         ))}
       </ul>
     </div>
-  );
+  )
 };
 
 BulletList.propTypes = {
