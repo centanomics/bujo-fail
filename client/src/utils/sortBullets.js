@@ -1,3 +1,4 @@
+//puts bullets with the same date into an array together
 module.exports = (bullets) => {
   let sortedBullets = []
   const uniqueDates = [...new Set(bullets.map(bullet => bullet.date))]
