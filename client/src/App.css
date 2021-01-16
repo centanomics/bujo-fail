@@ -89,7 +89,6 @@ header li a:not(.signup):hover,
 
 main {
   height: 100vh;
-  overflow-y: hidden;
 }
 
 main h1 {
@@ -140,10 +139,8 @@ main h1 {
 */
 
 .bullet-list-date {
-  overflow-y: scroll;
   list-style: none;
   padding-left: 0;
-  max-height: 75vh;
 }
 
 .bullet-list {
