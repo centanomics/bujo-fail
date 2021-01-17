@@ -31,9 +31,25 @@ html {
 header {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 1000px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header ul {
+    margin: 16px auto;
+    justify-content: space-between;
+  }
+
+  header li {
+    margin: 0;
+  }
 }
 
 .logo {
