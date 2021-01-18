@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 
+//private routes
+import PrivateRoute from './components/auth/PrivateRoute';
+
 // pages
 import Main from './pages/Main';
 import About from './pages/About';
@@ -18,7 +21,7 @@ function App() {
       <Router>
         <Fragment>
           <Switch>
-            <Route exact path='/' component={Main} />
+            <PrivateRoute exact path='/' component={Main} />
             <Route exact path='/about' component={About} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Register} />
