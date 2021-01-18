@@ -1,5 +1,7 @@
 import React from 'react';
 
+import RegisterForm from '../components/auth/RegisterForm';
+
 import Layout from '../components/layout/Layout';
 
 const Register = () => {
@@ -7,6 +9,7 @@ const Register = () => {
     <Layout>
       <main>
         <h1>Register</h1>
+        <RegisterForm />
       </main>
     </Layout>
   );
