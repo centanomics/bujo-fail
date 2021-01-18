@@ -50,6 +50,10 @@ header {
   header li {
     margin: 0;
   }
+
+  .registerForm > div {
+    flex-direction: column;
+  }
 }
 
 .logo {
@@ -207,4 +211,20 @@ main h1 {
 
 .symbol-priority {
   visibility: hidden;
+}
+
+/*
+  REGISTER  -------------------------------
+*/
+
+.registerForm {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.registerForm > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }

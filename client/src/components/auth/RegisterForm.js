@@ -15,27 +15,29 @@ const RegisterForm = props => {
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
   return (
-    <form>
+    <form className="registerForm">
       <div>
         <h2>Name</h2>
-        <input
-          type="text"
-          name="firstName"
-          id="firstName"
-          autocomplete="given-name"
-          placeholder="First Name"
-          onChange={onChange}
-          value={firstName}
-        />
-        <input
-          type="text"
-          name="lastName"
-          id="lastName"
-          autocomplete="family-name"
-          placeholder="Last Name"
-          onChange={onChange}
-          value={lastName}
-        />
+        <div>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            autocomplete="given-name"
+            placeholder="First Name"
+            onChange={onChange}
+            value={firstName}
+          />
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            autocomplete="family-name"
+            placeholder="Last Name"
+            onChange={onChange}
+            value={lastName}
+          />
+        </div>
       </div>
       <div>
         <h2>Email</h2>
