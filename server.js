@@ -3,6 +3,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 
 const authRouter = require('./routes/authRouter');
+const bulletsRouter = require('./routes/bulletsRouter');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json({ extended: false }));
 
 //Define Routes
 app.use('/api/auth', authRouter);
+app.use('api/bullets', bulletsRouter);
 
 //Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
@@ -26,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //Define Ports
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   log(`Server started on ${PORT}`);
