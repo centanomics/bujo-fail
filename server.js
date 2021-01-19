@@ -15,7 +15,7 @@ app.use(express.json({ extended: false }));
 
 //Define Routes
 app.use('/api/auth', authRouter);
-app.use('api/bullets', bulletsRouter);
+app.use('/api/bullets', bulletsRouter);
 
 //Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
