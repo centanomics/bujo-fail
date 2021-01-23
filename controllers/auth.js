@@ -29,6 +29,7 @@ exports.registerUser = async (req, res) => {
       email,
       password: bcrypt.hashSync(password, salt),
     })
+    console.log(user)
 
 
     res.status(200).json({msg: 'hi'})
