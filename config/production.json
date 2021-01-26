@@ -1,4 +1,4 @@
 {
   "mongoURI": "mongodb+srv://centbujo-production:centbujo-production@bujo-nftqs.mongodb.net/test?retryWrites=true&w=majority",
-  "jwt": "secret"
+  "jwtSecret": "32jh4kl3h4j2fjk4fchkrhljhf34uqfi3f4g3p"
 }
