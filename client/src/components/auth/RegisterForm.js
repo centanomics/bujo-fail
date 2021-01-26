@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
 
-const RegisterForm = props => {
+import { registerUser } from '../../actions/authActions'
+
+const RegisterForm = ({ registerUser }) => {
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
@@ -14,8 +17,13 @@ const RegisterForm = props => {
 
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
+  const onSubmit = e => {
+    e.preventDefault();
+    registerUser(user)
+  }
+
   return (
-    <form className="registerForm">
+    <form className="registerForm" onSubmit={onSubmit}>
       <div>
         <h2>Name</h2>
         <div>
@@ -75,12 +83,20 @@ const RegisterForm = props => {
           value={password2}
         />
       </div>
+      <div>
+        <button type="submit">Register</button>
+      </div>
     </form>
   )
 }
 
 RegisterForm.propTypes = {
-
+  registerUser: PropTypes.func.isRequired,
 }
 
-export default RegisterForm
+export default connect(
+  null,
+  {
+    registerUser
+  }
+)(RegisterForm)

@@ -1,13 +1,14 @@
 import React from 'react'
-import {Route, Redirect} from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import isLogin from '../../utils/isLogin';
+// import isLogin from '../../utils/isLogin';
 
-const PrivateRoute = ({component: Component, ...rest}) => {
+const PrivateRoute = ({component: Component, auth: {token}, ...rest}) => {
   return (
     // only show component if user is logged in
     <Route {...rest} component={props => (
-      isLogin() ?
+      token ?
         <Component {...props} /> :
         <Redirect to="/signup" />
     )} />
@@ -16,6 +17,14 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 
 PrivateRoute.propTypes = {
   component: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired,
 }
 
-export default PrivateRoute
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(PrivateRoute)

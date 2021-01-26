@@ -23,6 +23,7 @@ exports.registerUser = async (req, res) => {
       return res.status(400).json({msg: 'User already exist'})
     }
 
+    // creates user with hash
     let salt = bcrypt.genSaltSync(10);
     user = new Users({
       firstName,
