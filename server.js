@@ -1,11 +1,14 @@
 const log = require('debug')('server:log');
 const express = require('express');
-const connectDB = require('./config/db');
+const cors = require('cors');
 
+const connectDB = require('./config/db');
 const authRouter = require('./routes/authRouter');
 const bulletsRouter = require('./routes/bulletsRouter');
 
 const app = express();
+
+app.use(cors());
 
 // Connect Database
 connectDB();
