@@ -19,7 +19,7 @@ export const registerUser = formData => async dispatch => {
         'Content-Type': 'application/json'
       }
     };
-    const res = API.post('/api/auth/register', formData, config)
+    const res = await API.post('/api/auth/register', formData, config)
     dispatch({
       type: REGISTER_SUCCESS,
       payload: res.data

@@ -31,7 +31,7 @@ const RegisterForm = ({ registerUser }) => {
             type="text"
             name="firstName"
             id="firstName"
-            autocomplete="given-name"
+            autoComplete="given-name"
             placeholder="First Name"
             onChange={onChange}
             value={firstName}
@@ -40,7 +40,7 @@ const RegisterForm = ({ registerUser }) => {
             type="text"
             name="lastName"
             id="lastName"
-            autocomplete="family-name"
+            autoComplete="family-name"
             placeholder="Last Name"
             onChange={onChange}
             value={lastName}
