@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 // import isLogin from '../../utils/isLogin';
 
-const PrivateRoute = ({component: Component, auth: {token}, ...rest}) => {
+const PrivateRoute = ({component: Component, auth: {isAuthenticated}, ...rest}) => {
   return (
     // only show component if user is logged in
     <Route {...rest} component={props => (
-      token ?
+      isAuthenticated ?
         <Component {...props} /> :
         <Redirect to="/signup" />
     )} />
