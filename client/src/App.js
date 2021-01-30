@@ -4,6 +4,7 @@ import './App.css';
 import { Provider } from 'react-redux';
 
 import store from './store';
+import setAuthToken from './utils/setAuthToken';
 
 //private routes
 import PrivateRoute from './components/auth/PrivateRoute';
@@ -15,7 +16,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Four04 from './pages/Four04';
 
-function App() {
+if(localStorage.token) setAuthToken(localStorage.token)
+
+const App = () => {
   return (
     <Provider store={store}>
       <Router>
