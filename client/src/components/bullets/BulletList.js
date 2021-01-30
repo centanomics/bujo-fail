@@ -13,7 +13,7 @@ import sortBullets from '../../utils/sortBullets'
 const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
   
   useEffect(() => {
-    getBullets();
+    // getBullets();
     //eslint-disable-next-line
   }, []);
 

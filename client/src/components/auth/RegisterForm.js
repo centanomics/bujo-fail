@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import {Redirect} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 
 import { registerUser } from '../../actions/authActions'
 
-const RegisterForm = ({ registerUser }) => {
+const RegisterForm = ({ registerUser, auth: { isAuthenticated } }) => {
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
@@ -24,6 +25,7 @@ const RegisterForm = ({ registerUser }) => {
 
   return (
     <form className="registerForm" onSubmit={onSubmit}>
+      { isAuthenticated ? <Redirect to="/"/> : '' }
       <div>
         <h2>Name</h2>
         <div>
@@ -94,8 +96,12 @@ RegisterForm.propTypes = {
   registerUser: PropTypes.func.isRequired,
 }
 
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
 export default connect(
-  null,
+  mapStateToProps,
   {
     registerUser
   }
