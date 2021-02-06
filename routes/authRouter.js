@@ -34,9 +34,9 @@ router.post('/register', [
       min: 6
     }),
   check('password2', 'Passwords must match')
-    .custom((value, { req }) => 
+    .custom((value, { req }) =>
       req.body.password2 === req.body.password
     )
-], auth.registerUser)
+], auth.registerUser);
 
 module.exports = router;

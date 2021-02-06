@@ -25,7 +25,7 @@ const setBulletLoading = () => {
 export const getBullets = () => async (dispatch) => {
   try {
     dispatch(setBulletLoading());
-    const res = await API.get('/bullets');
+    const res = await API.get('/api/bullets');
     dispatch({
       type: GET_BULLETS,
       payload: res.data,

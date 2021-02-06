@@ -1,9 +1,9 @@
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
-  // LOGIN_SUCCESS,
-  // LOGIN_FAIL,
-  // LOGOUT,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT,
   AUTH_ERROR,
   USER_LOADED
 } from './types';
@@ -63,7 +63,7 @@ export const login = formData => async dispatch => {
     }
   };
   try {
-    const res = await axios.post(`${api}/api/auth/login`, formData, config);
+    const res = await API.post(`/api/auth/login`, formData, config);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data
