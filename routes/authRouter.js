@@ -1,15 +1,13 @@
 const router = require('express').Router();
 const { check } = require('express-validator');
 
-const auth = require('../controllers/auth');
-
-router.get('/', async (req, res) => {
-  res.send({ lol: 'hi' });
-});
+const authCtrl = require('../controllers/auth');
+const { auth } = require('../middleware/auth');
 
 // @route     GET api/auth
 // @desc      gets logged in user
 // @access    Private
+router.get('/', auth, authCtrl.getUser)
 
 // @route     POST api/auth/login
 // @desc      auths a user and gets token
@@ -34,9 +32,9 @@ router.post('/register', [
       min: 6
     }),
   check('password2', 'Passwords must match')
-    .custom((value, { req }) => 
+    .custom((value, { req }) =>
       req.body.password2 === req.body.password
     )
-], auth.registerUser)
+], authCtrl.registerUser);
 
 module.exports = router;

@@ -5,6 +5,18 @@ const config = require('config')
 
 const Users = require('../models/users');
 
+// get user
+
+exports.getUser = async (req, res) => {
+  try {
+    const user = await Users.findById(req.user.id).select("-password");
+    return res.status(200).json(user)
+  } catch (err) {
+    console.log(err.message);
+    return res.status(500).send('server error')
+  }
+}
+
 // register user
 
 exports.registerUser = async (req, res) => {

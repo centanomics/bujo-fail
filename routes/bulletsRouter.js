@@ -1,8 +1,12 @@
 const router = require('express').Router();
 
-// @route     GET api/bullets
+const auth = require('../middleware/auth');
+const { getAllBullets } = require('../controllers/bullets');
+
+// @route     GET api/bullets/
 // @desc      gets all bullets for userId
 // @access    Private
+router.get('/', auth, getAllBullets);
 
 // @route     GET api/bullets/:id
 // @desc      gets one bullet by id
