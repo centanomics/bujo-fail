@@ -4,7 +4,6 @@ const Bullets = require('../models/bullets');
 exports.getAllBullets = async (req, res) => {
   try {
     const bullets = await Bullets.find({ userId: req.user.id });
-    console.log(bullets)
     res.status(200).json(bullets);
   } catch (err) {
     console.error(err.message);

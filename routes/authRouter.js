@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const { check } = require('express-validator');
 
-const authCtrl = require('../controllers/auth');
-const { auth } = require('../middleware/auth');
+const { getUser, registerUser } = require('../controllers/auth');
+const auth = require('../middleware/auth');
 
 // @route     GET api/auth
 // @desc      gets logged in user
 // @access    Private
-router.get('/', auth, authCtrl.getUser)
+router.get('/', auth, getUser)
 
 // @route     POST api/auth/login
 // @desc      auths a user and gets token
@@ -35,6 +35,6 @@ router.post('/register', [
     .custom((value, { req }) =>
       req.body.password2 === req.body.password
     )
-], authCtrl.registerUser);
+], registerUser);
 
 module.exports = router;
