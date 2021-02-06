@@ -7,9 +7,8 @@ import {
   AUTH_ERROR,
   USER_LOADED
 } from './types';
-import setAuthToken from '../utils/setAuthToken';
 
-import API from '../utils/API';
+import API , {setAuthToken} from '../utils/API';
 
 // loads user
 

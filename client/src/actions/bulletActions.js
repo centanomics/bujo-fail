@@ -10,7 +10,7 @@ import {
   SET_UPDATE,
 } from './types';
 
-import API from '../utils/API';
+import API, {setAuthToken} from '../utils/API';
 
 // set bullet loading
 
@@ -23,6 +23,7 @@ const setBulletLoading = () => {
 // load all bullets (temporarily all)
 
 export const getBullets = () => async (dispatch) => {
+  if (localStorage.token) setAuthToken(localStorage.token);
   try {
     dispatch(setBulletLoading());
     const res = await API.get('/api/bullets');
