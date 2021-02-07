@@ -23,6 +23,11 @@ const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
 
   const sortedBullets = sortBullets(bullets);
 
+  const getLocalDate = doot => {
+    const date = new Date(doot);
+    return date.toISOString().substr(0, 10);
+  }
+
   // return (
   //   <div>
   //     {console.log(bullets)}
@@ -44,7 +49,7 @@ const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
             <h3>{sortedBullet.date}</h3>
             <ul className="bullet-list">
               {sortedBullet.bullets.map((bullet) => (
-                <Bullet bulletInfo={bullet} key={bullet.id} />
+                <Bullet bulletInfo={bullet} key={bullet._id} />
               ))}
             </ul>
           </li>

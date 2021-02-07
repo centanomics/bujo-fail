@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
 
 import { addBullet } from '../../actions/bulletActions';
 
@@ -23,9 +22,9 @@ const BulletAddForm = ({ addBullet }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     // bullet.date = Date.now().toString();
-    let date = new Date();
-    bullet.date = date.toISOString().substr(0, 10);
-    bullet.id = uuidv4();
+    // let date = new Date();
+    // bullet.date = date.toISOString().substr(0, 10);
+    // bullet.id = uuidv4();
     addBullet(bullet);
     setBullet({
       name: '',

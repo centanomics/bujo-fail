@@ -21,18 +21,18 @@ exports.addBullet = async (req, res) => {
     res.status(400).json({ errors: errors.array() });
   }
 
-  const { name, type, priority, id } = req.body;
+  const { name, type, priority } = req.body;
 
   try {
     const bullet = new Bullets({
       name,
       type,
       priority,
-      userId: id
+      userId: req.user.id
     });
 
     const newBullet = await bullet.save();
-    res.status(200).json({ newBullet });
+    res.status(200).json(newBullet);
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');

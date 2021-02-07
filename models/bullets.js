@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 const uuid = require('uuid');
 
+// const getDate = () => {
+//   const date = Date.now();
+//   const localDate = date.toLocaleString().substr(0, 10);
+//   return localDate;
+// }
+
 const BulletSchema = mongoose.Schema({
   _id: {
     type: String,
@@ -17,7 +23,7 @@ const BulletSchema = mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
     required: true,
   },
   priority: {
