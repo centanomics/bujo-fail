@@ -9,7 +9,7 @@ import BulletList from '../components/bullets/BulletList';
 
 const Main = ({ loadUser }) => {
   useEffect(() => {
-    //loadUser()
+    // loadUser()
     //eslint-disable-next-line
   }, [])
   return (

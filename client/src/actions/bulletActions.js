@@ -42,8 +42,9 @@ export const getBullets = () => async (dispatch) => {
 // add bullet
 
 export const addBullet = (bullet) => async (dispatch) => {
+  if (localStorage.token) setAuthToken(localStorage.token);
   try {
-    const res = await API.post(`/bullets`, bullet);
+    const res = await API.post(`/api/bullets`, bullet);
     dispatch({
       type: ADD_BULLET,
       payload: res.data,
@@ -60,7 +61,7 @@ export const addBullet = (bullet) => async (dispatch) => {
 
 export const updateBullet = (bullet) => async (dispatch) => {
   try {
-    const res = await API.put(`/bullets/${bullet.id}`, bullet);
+    const res = await API.put(`/bullets/${bullet._id}`, bullet);
     dispatch({
       type: UPDATE_BULLET,
       payload: res.data,
@@ -77,7 +78,7 @@ export const updateBullet = (bullet) => async (dispatch) => {
 
 export const deleteBullet = (id) => async (dispatch) => {
   try {
-    await API.delete(`/bullets/${id}`);
+    await API.delete(`/api/bullets/${id}`);
     dispatch({
       type: DELETE_BULLET,
       payload: id,

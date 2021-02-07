@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Nav = () => {
-  const links = ['about', 'login', 'signup'];
+const Nav = ({auth: { isAuthenticated }}) => {
+  const links = !isAuthenticated ? ['about', 'login', 'signup'] : ['about', 'logout'];
 
   return (
     <nav>
@@ -23,4 +25,15 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+Nav.propTypes = {
+  auth: PropTypes.object.isRequired,
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+})
+
+export default connect(
+  mapStateToProps,
+  null
+)(Nav);

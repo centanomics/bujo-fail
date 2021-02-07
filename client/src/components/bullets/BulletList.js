@@ -23,18 +23,6 @@ const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
 
   const sortedBullets = sortBullets(bullets);
 
-  // return (
-  //   <div>
-  //     {console.log(bullets)}
-  //     {!update ? <BulletAddForm /> : <BulletEditForm />}
-  //     <ul className="bullet-list">
-  //       {bullets.map((bullet) => (
-  //         <Bullet bulletInfo={bullet} key={bullet.id} />
-  //       ))}
-  //     </ul>
-  //   </div>
-  // );
-
   return (
     <div>
       {!update ? <BulletAddForm /> : <BulletEditForm />}
@@ -44,7 +32,7 @@ const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
             <h3>{sortedBullet.date}</h3>
             <ul className="bullet-list">
               {sortedBullet.bullets.map((bullet) => (
-                <Bullet bulletInfo={bullet} key={bullet.id} />
+                <Bullet bulletInfo={bullet} key={bullet._id} />
               ))}
             </ul>
           </li>
