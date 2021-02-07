@@ -23,23 +23,6 @@ const BulletList = ({ bullet: { bullets, loading, update }, getBullets }) => {
 
   const sortedBullets = sortBullets(bullets);
 
-  const getLocalDate = doot => {
-    const date = new Date(doot);
-    return date.toISOString().substr(0, 10);
-  }
-
-  // return (
-  //   <div>
-  //     {console.log(bullets)}
-  //     {!update ? <BulletAddForm /> : <BulletEditForm />}
-  //     <ul className="bullet-list">
-  //       {bullets.map((bullet) => (
-  //         <Bullet bulletInfo={bullet} key={bullet.id} />
-  //       ))}
-  //     </ul>
-  //   </div>
-  // );
-
   return (
     <div>
       {!update ? <BulletAddForm /> : <BulletEditForm />}
