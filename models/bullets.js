@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const uuidv4 = require('uuid').v4();
+const uuid = require('uuid');
 
 const BulletSchema = mongoose.Schema({
   _id: {
     type: String,
-    default: uuidv4,
+    default: uuid.v4,
     required: true,
   },
   name: {

@@ -42,8 +42,9 @@ export const getBullets = () => async (dispatch) => {
 // add bullet
 
 export const addBullet = (bullet) => async (dispatch) => {
+  if (localStorage.token) setAuthToken(localStorage.token);
   try {
-    const res = await API.post(`/bullets`, bullet);
+    const res = await API.post(`/api/bullets`, bullet);
     dispatch({
       type: ADD_BULLET,
       payload: res.data,

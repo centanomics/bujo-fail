@@ -15,7 +15,7 @@ const Logout = ({ logout }) => {
 
   return (
     <Layout>
-      <Redirect to="/register" />
+      <Redirect to="/signup" />
     </Layout>
   )
 }
