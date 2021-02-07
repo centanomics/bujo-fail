@@ -1,4 +1,5 @@
 const { validationResult } = require('express-validator');
+const { updateBullet } = require('../client/src/actions/bulletActions');
 
 const Bullets = require('../models/bullets');
 
@@ -37,6 +38,39 @@ exports.addBullet = async (req, res) => {
     console.error(err.message);
     res.status(500).send('Server Error');
   }
+}
+
+// update a bullet
+
+exports.updateBullet = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    res.status(400).json({ errors: errors.array() });
+  }
+
+  const { name, type, priority } = req.body;
+  const { id } = req.params;
+
+  try {
+    // const bullet = await Bullets.findById(id);
+
+    const bulletFields = {
+      name,
+      type,
+      priority
+    };
+
+    const updatedBullet = await Bullets.findByIdAndUpdate(
+      id,
+      { $set: bulletFields },
+      { new: true }
+    )
+    res.status(200).json(updatedBullet);
+  } catch (error) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+
 }
 
 // delete a bullet

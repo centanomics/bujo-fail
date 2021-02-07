@@ -61,7 +61,7 @@ export const addBullet = (bullet) => async (dispatch) => {
 
 export const updateBullet = (bullet) => async (dispatch) => {
   try {
-    const res = await API.put(`/bullets/${bullet.id}`, bullet);
+    const res = await API.put(`/bullets/${bullet._id}`, bullet);
     dispatch({
       type: UPDATE_BULLET,
       payload: res.data,
