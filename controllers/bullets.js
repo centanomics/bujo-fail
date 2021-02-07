@@ -34,7 +34,20 @@ exports.addBullet = async (req, res) => {
     const newBullet = await bullet.save();
     res.status(200).json(newBullet);
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+}
+
+// delete a bullet
+
+exports.deleteBullet = async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Bullets.findByIdAndRemove(id);
+    res.status(200).json({msg: 'bullet deleted'})
+  } catch (err) {
+    console.error(err.message);
     res.status(500).send('Server Error');
   }
 }

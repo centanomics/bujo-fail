@@ -43,7 +43,7 @@ export default (state = initialState, action) => {
     case DELETE_BULLET:
       return {
         ...state,
-        bullets: state.bullets.filter((bullet) => bullet.id !== action.payload),
+        bullets: state.bullets.filter((bullet) => bullet._id !== action.payload),
       };
     case SET_CURRENT:
       return {

@@ -6,9 +6,9 @@ import { FaEdit, FaTrashAlt} from 'react-icons/fa'
 import { deleteBullet, editBullet } from '../../actions/bulletActions';
 
 const Bullet = ({ bulletInfo, deleteBullet, editBullet }) => {
-  const { id, name, type, priority } = bulletInfo;
+  const { _id, name, type, priority } = bulletInfo;
   const onClick = () => {
-    deleteBullet(id);
+    deleteBullet(_id);
   };
   const onEdit = () => {
     editBullet(bulletInfo);

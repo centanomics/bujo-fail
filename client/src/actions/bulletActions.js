@@ -78,7 +78,7 @@ export const updateBullet = (bullet) => async (dispatch) => {
 
 export const deleteBullet = (id) => async (dispatch) => {
   try {
-    await API.delete(`/bullets/${id}`);
+    await API.delete(`/api/bullets/${id}`);
     dispatch({
       type: DELETE_BULLET,
       payload: id,

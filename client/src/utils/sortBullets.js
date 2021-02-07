@@ -13,7 +13,6 @@ module.exports = (bullets) => {
   const localBullets = getLocalDates(bullets);
   let sortedBullets = []
   const uniqueDates = [...new Set(localBullets.map(bullet => bullet.date))]
-  console.log(uniqueDates)
 
   for (let i = 0; i < uniqueDates.length; i++) {
     sortedBullets.push({

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { check } = require('express-validator');
 
 const auth = require('../middleware/auth');
-const { getAllBullets, addBullet } = require('../controllers/bullets');
+const { getAllBullets, addBullet, deleteBullet } = require('../controllers/bullets');
 
 // @route     GET api/bullets/
 // @desc      gets all bullets for userId
@@ -31,5 +31,6 @@ router.post('/', [
 // @route     DELETE api/bullets/:id
 // @desc      deletes a bullet by its id
 // @access    Private
+router.delete('/:id', auth, deleteBullet)
 
 module.exports = router;
