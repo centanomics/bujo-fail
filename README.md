@@ -75,7 +75,7 @@ npm run dev-frontend
 
 The project should be running now!
 
-## Running the tests
+## Running the tests - no tests atm
 
 Explain how to run the automated tests for this system
 
